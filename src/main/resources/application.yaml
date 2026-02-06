@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: api-book
+
+  datasource:
+    #jurl=jdbc:mysql://mysql:3306/hexagonal_db #Para cuando la aplicacion se levante en un contenedor java
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/${MYSQL_DATABASE:hexagonal_db}
+    username: ${MYSQL_USER:hex_user}
+    password: ${MYSQL_PASSWORD:hex_pass}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    sql-script-encoding: UTF-8
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    #database-platform: org.hibernate.dialect.MySQL8Dialect
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  # Esto evita que intente mapear "procedimientos" como propiedades
+  model-and-view-allowed: false
+
+#docker-compose up -d
+#docker ps -a
+#docker logs <name-image>
+#docker stop <name-image>
+#docker rm <name-image>
+#El flag -v borra los volúmenes declarados, incluyendo mysql_data, y ahí sí pierdes las tablas.: docker-compose down -v
