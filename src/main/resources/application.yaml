@@ -25,6 +25,10 @@ springdoc:
   # Esto evita que intente mapear "procedimientos" como propiedades
   model-and-view-allowed: false
 
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION}
+
 #docker-compose up -d
 #docker ps -a
 #docker logs <name-image>

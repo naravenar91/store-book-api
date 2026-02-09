@@ -1,5 +1,8 @@
 /*!40101 SET NAMES utf8mb4 */;
 
+INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
+INSERT INTO roles (name) VALUES ('ROLE_USER');
+
 INSERT INTO authors (name) 
 VALUES ('Gabriel García Márquez')
       ,('J.K. Rowling')
