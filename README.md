@@ -55,10 +55,14 @@ Levantar MySQL con Docker Compose
 - 01_create_tables.sql → creación de tablas (authors, categories, books)
 - 02_insert_data.sql → inserción de datos iniciales
 
-## Construir y ejecutar la aplicación
+## Ejecutar la aplicación localmente
 > mvn clean install
 >
 > mvn spring-boot:run
+
+
+> ## Construir y ejecutar la aplicación en docker
+> docker-compose up -d --build
 
 
 ### 1. Clonar el repositorio
