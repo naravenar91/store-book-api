@@ -5,6 +5,7 @@ import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,9 +16,9 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de Biblioteca - Arriendo Project")
+                        .title("Library API - Lease Project")
                         .version("1.0")
-                        .description("Documentación de la API para el sistema de libros y arriendos.")
+                        .description("API documentation for the books and rentals system")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
 
                 .addSecurityItem(new SecurityRequirement().addList("BearerAuth"))
@@ -26,5 +27,21 @@ public class OpenApiConfig {
                                 .type(SecurityScheme.Type.HTTP)
                                 .scheme("bearer")
                                 .bearerFormat("JWT")));
+    }
+
+    @Bean
+    public GroupedOpenApi authApi() {
+        return GroupedOpenApi.builder()
+                .group("Autenticación")
+                .pathsToMatch("/api/auth/**")
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi publicApi() {
+        return GroupedOpenApi.builder()
+                .group("Biblioteca")
+                .pathsToMatch("/api/books/**", "/api/author/**", "/api/category/**")
+                .build();
     }
 }

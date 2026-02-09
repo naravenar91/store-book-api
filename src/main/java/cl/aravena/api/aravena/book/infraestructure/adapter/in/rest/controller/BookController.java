@@ -4,6 +4,9 @@ import cl.aravena.api.aravena.book.domain.book.models.Book;
 import cl.aravena.api.aravena.book.domain.book.port.in.book.*;
 import cl.aravena.api.aravena.book.infraestructure.adapter.in.rest.dto.BookRequest;
 import cl.aravena.api.aravena.book.infraestructure.adapter.in.rest.dto.BookResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -13,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/books")
+@Tag(name = "Books", description = "Final points for book catalog management")
 public class BookController {
 
     private final CreateBookUseCase create;
@@ -65,6 +69,14 @@ public class BookController {
         return ResponseEntity.ok(BookResponse.fromDomain(get.findById(id)));
     }
 
+    @Operation(
+            summary = "List all books",
+            description = "Returns a list of books. Requires USER or ADMIN role.",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "List obtained successfully"),
+                    @ApiResponse(responseCode = "401", description = "Unauthorized - Invalid or missing token")
+            }
+    )
     @GetMapping
     public ResponseEntity<List<BookResponse>> getAll() {
         List<BookResponse> response = getAll.getAll()
