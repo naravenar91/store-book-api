@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(description = "Request by create a Author")
 public record AuthorRequest(
-    @Schema(description = "Name Author", example = "Juan")
+    @Schema(description = "Author Name", example = "Juan")
     String name){
 
     @JsonIgnore

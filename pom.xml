@@ -8,9 +8,9 @@
         <version>3.4.2</version> <relativePath/>
     </parent>
 	<groupId>cl.aravena</groupId>
-	<artifactId>api-book</artifactId>
+	<artifactId>book-store-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-book</name>
+	<name>book-store-api</name>
 	<description>Vent and Rent Books</description>
 	<url/>
 	<licenses>
@@ -92,6 +92,21 @@
             <artifactId>jjwt-jackson</artifactId>
             <version>0.11.5</version>
             <scope>runtime</scope>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>mysql</artifactId>
+            <version>1.19.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>1.19.3</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

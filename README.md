@@ -1,4 +1,4 @@
-# Project Book API
+## 📚 API de Gestión de Biblioteca - Arriendo Project
 
 ![Java](https://img.shields.io/badge/Java-17-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
@@ -10,7 +10,7 @@ API REST para gestionar libros, creada con Java y Spring Boot. Permite crear, li
 
 ---
 
-## Tecnologías
+## 🛠️ Stack Tecnológico
 
 - Java 17
 - Spring Boot 3.x
@@ -22,6 +22,17 @@ API REST para gestionar libros, creada con Java y Spring Boot. Permite crear, li
 - JUnit 5 / Mockito
 - Docker / Docker Compose
 - Swagger / OpenAPI (para documentación de API)
+
+---
+
+## 🏗️ Estructura del Proyecto (Arquitectura Hexagonal)
+El proyecto separa la lógica de negocio de la infraestructura:
+
+Domain: Entidades (Book, User) y Puertos (Interfaces).
+
+Application: Casos de uso y servicios de aplicación.
+
+Infrastructure: Adaptadores de persistencia (JPA), controladores REST y configuración de seguridad.
 
 ---
 
@@ -64,6 +75,9 @@ Levantar MySQL con Docker Compose
 > ## Construir y ejecutar la aplicación en docker
 > docker-compose up -d --build
 
+## 📖 Documentación de la API
+* **Swagger UI:** http://localhost:8080/swagger-ui/index.html
+* **OpenAPI Spec (JSON):** [http://localhost:8080/q/openapi](http://localhost:8080/q/openapi)
 
 ### 1. Clonar el repositorio
 

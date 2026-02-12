@@ -1,6 +1,9 @@
 version: '3.8'
 
 services:
+  book-store-api: # Nombre del servicio
+    build: .
+    container_name: book-store-api
 
   mysql:
     image: mysql:8.0

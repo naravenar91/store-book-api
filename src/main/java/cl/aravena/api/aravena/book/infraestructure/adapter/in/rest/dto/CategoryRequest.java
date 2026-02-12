@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(description = "Request by create a Category")
 public record CategoryRequest(
-        @Schema(description = "Name Category", example = "Romance")
+        @Schema(description = "Category Name", example = "Romance")
         String name){
 
     @JsonIgnore

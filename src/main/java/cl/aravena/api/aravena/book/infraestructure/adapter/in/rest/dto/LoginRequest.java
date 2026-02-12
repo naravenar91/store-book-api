@@ -3,8 +3,8 @@ package cl.aravena.api.aravena.book.infraestructure.adapter.in.rest.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public record LoginRequest(
-        @Schema(description = "User name of user registered (email)", example = "nicolas.aravena25@gmail.com")
+        @Schema(description = "User name of user registered (email)", example = "email_test25@test.com")
         String userName,
-        @Schema(description = "Password access", example = "nicolas1234")
+        @Schema(description = "Password access", example = "test1234")
         String password) {
 }

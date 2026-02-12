@@ -11,7 +11,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 public record BookRequest(
         @Schema(description = "Name book", example = "One Punch Man")
         String name,
-        @Schema(description = "Description Book", example = "Calvo con Capa")
+        @Schema(description = "Description Book", example = "Bald man with cape")
         String description,
         @Schema(description = "Number Page", example = "123")
         Integer pages,

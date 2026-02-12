@@ -16,7 +16,7 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Library API - Lease Project")
+                        .title("Library API - Book Store Api")
                         .version("1.0")
                         .description("API documentation for the books and rentals system")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))

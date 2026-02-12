@@ -10,11 +10,10 @@ public record BookResponse(
         String authorName,
         String categoryName
 ) {
-    // Método estático para convertir desde el Dominio al DTO de salida
     public static BookResponse fromDomain(Book book) {
         return new BookResponse(
                 book.id(),
-                book.name().value(), // Aquí "aplanamos" el Value Object Name a String
+                book.name().value(),
                 book.description(),
                 book.pages(),
                 book.author() != null ? book.author().name().value() : null,

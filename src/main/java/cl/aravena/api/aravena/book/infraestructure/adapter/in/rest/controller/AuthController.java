@@ -33,7 +33,6 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
-        // El AuthenticationManager llamará internamente a tu SpringDataUserRepository
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.userName(), loginRequest.password())
         );
